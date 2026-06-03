@@ -314,25 +314,27 @@ jobs:
         id: branch-name
         run: |
           branch="${GITHUB_REF#refs/heads/}"
+          safe_branch="$(printf '%s' "$branch" | sed 's/[":<>|*?\\\/]/-/g')"
           echo "branch=${branch}" >> "$GITHUB_OUTPUT"
+          echo "safe_branch=${safe_branch}" >> "$GITHUB_OUTPUT"
 
       - name: Prepare firmware directory
         run: |
-          mkdir -p "firmware/${{ steps.branch-name.outputs.branch }}"
-          rm -rf "firmware/${{ steps.branch-name.outputs.branch }}"/*
+          mkdir -p "firmware/${{ steps.branch-name.outputs.safe_branch }}"
+          rm -rf "firmware/${{ steps.branch-name.outputs.safe_branch }}"/*
 
       - name: Download firmware artifacts
         uses: actions/download-artifact@v4
         continue-on-error: true
         with:
-          path: firmware/${{ steps.branch-name.outputs.branch }}
+          path: firmware/${{ steps.branch-name.outputs.safe_branch }}
           pattern: artifact-*
           merge-multiple: true
 
       - name: Check downloaded firmware
         id: firmware-files
         run: |
-          count="$(find "firmware/${{ steps.branch-name.outputs.branch }}" -type f | wc -l)"
+          count="$(find "firmware/${{ steps.branch-name.outputs.safe_branch }}" -type f | wc -l)"
           echo "count=${count}" >> "$GITHUB_OUTPUT"
           if [ "$count" -gt 0 ]; then
             echo "has_files=true" >> "$GITHUB_OUTPUT"
@@ -354,5 +356,5 @@ jobs:
         if: steps.firmware-files.outputs.has_files == 'true'
         uses: actions/upload-artifact@v4
         with:
-          name: firmware-${{ steps.branch-name.outputs.branch }}
-          path: firmware/${{ steps.branch-name.outputs.branch }}/*
+          name: firmware-${{ steps.branch-name.outputs.safe_branch }}
+          path: firmware/${{ steps.branch-name.outputs.safe_branch }}/*
