@@ -6,7 +6,7 @@ It is a ZMK-powered split ergonomic input device, built around the idea that typ
 
 Polaris is the North Star of the Geacon lineage: a route marker for modular input, a working keyboard, and a platform for trying trackballs, touchpads, rotary encoders, joystick-style controls, and sensor-driven interaction without treating them as afterthoughts.
 
-![Physical keymap preview](https://github.com/te9no/zmk-config-GeaconPolaris/blob/main/keymap-svg/Polaris.svg)
+![Physical keymap preview](keymap-svg/Polaris.svg)
 
 ## Concept
 
