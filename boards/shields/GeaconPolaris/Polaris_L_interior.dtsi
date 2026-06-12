@@ -36,6 +36,11 @@
             compatible = "zmk,input-split";
             reg = <3>;
         };
+
+        iqs_split: iqs_split@4 {
+            compatible = "zmk,input-split";
+            reg = <4>;
+        };
     };
 
     trackball_listener: trackball_listener {
@@ -61,7 +66,7 @@
                                <&zip_keybind_keys>;
             process-next;
         };
-        
+
         arrow-prevent-move {
             layers = <2>;
             input-processors = <&zip_xy_scaler 0 1>;
@@ -73,14 +78,14 @@
                                <&mouse_runtime_input_processor>,
                                <&zip_xy_scaler 1 3>;
         };
-    }; 
+    };
 
-    
+
     trackpad_listener: trackpad_listener {
         compatible = "zmk,input-listener";
         status = "okay";
         device = <&trackpad_split>;
-        
+
         input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT)>,
                            <&mouse_runtime_input_processor>,
                            <&zip_xy_scaler 1 5>,
@@ -94,7 +99,7 @@
                                <&zip_scroll_scaler 1 70>;
         };
     };
-    
+
 	scroll_runtime_input_processor_r: scroll_runtime_input_processor_r {
 		compatible = "zmk,input-processor-runtime";
         processor-label = "ScrR";
@@ -102,7 +107,7 @@
 		track-remainders;
 		scale-divisor = <60>;
 		#input-processor-cells = <0>;
-	};   
+	};
 };
 
 &scroll_runtime_input_processor_r {

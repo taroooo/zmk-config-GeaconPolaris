@@ -1,0 +1,45 @@
+/ {
+   aliases {
+      led-red = &led0;
+      led-green = &led1;
+      led-blue = &led2;
+   };
+
+   leds {
+      compatible = "gpio-leds";
+      status = "okay";
+      led0: led_0 {
+        gpios = LED_RED_GPIOS;  // red LED, connected to P0.26
+      };
+      led1: led_1 {
+        gpios = LED_GREEN_GPIOS;  // green LED, connected to P0.30
+      };
+      led2: led_2 {
+        gpios = LED_BLUE_GPIOS;  // blue LED, connected to P0.06
+      };
+   };
+
+   // Encoders
+   left_encoder: left_encoder {
+      compatible = "alps,ec11";
+      status = "disabled";
+   };
+
+   sensors: sensors {
+      compatible = "zmk,keymap-sensors";
+      sensors = <&left_encoder>;
+   };
+
+   vbatt: vbatt {
+      io-channels = BATTERY_CHANNEL;
+      power-gpios; // unset
+      output-ohms = <470000>;
+      full-ohms = <(1000000 + 470000)>;
+      // For Ni-Mh 1U
+      mv-to-pct-thresholds = <1100 1150 1200 1220 1240 1260 1280 1300 1320 1350 1400>;
+   };
+};
+
+&adc {
+   status = "okay";
+};

@@ -43,11 +43,11 @@
         #address-cells = <1>;
         #size-cells = <0>;
 
-        trackpad_split: trackpad_split@3 {
+        iqs_split: iqs_split@4 {
             compatible = "zmk,input-split";
             status = "okay";
             device = <&iqs9151>;
-            reg = <3>;
+            reg = <4>;
         };
     };
 
@@ -69,10 +69,10 @@
         track-remainders;
     };
 
-    trackpad_listener: trackpad_listener {
+    iqs_listener: iqs_listener {
         compatible = "zmk,input-listener";
         status = "okay";
-        device = <&trackpad_split>;
+        device = <&iqs_split>;
         input-processors = <&zip_xy_scaler 1 24>,
                            <&zip_scroll_scaler 1 40>,
                            <&zip_dynamic_xy_scaler>,
