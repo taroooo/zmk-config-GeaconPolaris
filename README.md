@@ -1,5 +1,7 @@
 # GeaconPolaris
 
+[![Build Health](badges/build-health/zmk-config-GeaconPolaris/main/build-health.svg)](https://github.com/te9no/zmk-config-GeaconPolaris/actions/workflows/build.yml?query=branch%3Amain)
+
 **GeaconPolaris is not merely a keyboard firmware repository.**
 
 It is a ZMK-powered split ergonomic input device, built around the idea that typing, pointing, scrolling, navigating, and experimenting with input hardware should live in the same constellation.
