@@ -1500,13 +1500,15 @@ svg.physical-layout { font-family: ui-monospace, SFMono-Regular, Consolas, monos
 <rect x="0" y="0" width="52" height="52" rx="6" ry="6"/>
 <text class="tap" x="26" y="26">TRANS</text>
 </g>
-<g class="key keypos-38 transparent" transform="translate(303 246.605) rotate(0 -234 -247)">
+<g class="key keypos-38 " transform="translate(303 246.605) rotate(0 -234 -247)">
 <rect x="0" y="0" width="52" height="52" rx="6" ry="6"/>
-<text class="tap" x="26" y="26">TRANS</text>
+<text class="tap" x="26" y="20">MB1</text>
+<text class="hold" x="26" y="37">MOUSE</text>
 </g>
-<g class="key keypos-39 transparent" transform="translate(355 246.605) rotate(0 -286 -247)">
+<g class="key keypos-39 " transform="translate(355 246.605) rotate(0 -286 -247)">
 <rect x="0" y="0" width="52" height="52" rx="6" ry="6"/>
-<text class="tap" x="26" y="26">TRANS</text>
+<text class="tap" x="26" y="20">MB2</text>
+<text class="hold" x="26" y="37">MOUSE</text>
 </g>
 <g class="key keypos-40 transparent" transform="translate(602 246.605) rotate(0 -351 -247)">
 <rect x="0" y="0" width="52" height="52" rx="6" ry="6"/>
