@@ -1,0 +1,13 @@
+{
+  "repository": "taroooo/zmk-config-GeaconPolaris",
+  "branch": "agent/runtime-combo-stack-headroom",
+  "target": "all",
+  "status": "passing",
+  "raw_status": "success",
+  "color": "#2ea44f",
+  "sha": "3a3f5250ced77e36bcc8d2d863c685ed114cc6fa",
+  "run_id": "31585459600",
+  "run_number": "4",
+  "run_url": "https://github.com/taroooo/zmk-config-GeaconPolaris/actions/runs/31585459600",
+  "generated_at": "2026-08-12T10:07:53Z"
+}
