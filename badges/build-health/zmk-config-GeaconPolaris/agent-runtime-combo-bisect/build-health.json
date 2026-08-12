@@ -1,0 +1,13 @@
+{
+  "repository": "taroooo/zmk-config-GeaconPolaris",
+  "branch": "agent/runtime-combo-bisect",
+  "target": "all",
+  "status": "passing",
+  "raw_status": "success",
+  "color": "#2ea44f",
+  "sha": "a177f68ca633cd1fcd98622ddaccc1473a9dbb1e",
+  "run_id": "31587345985",
+  "run_number": "5",
+  "run_url": "https://github.com/taroooo/zmk-config-GeaconPolaris/actions/runs/31587345985",
+  "generated_at": "2026-08-12T10:33:59Z"
+}
