@@ -59,17 +59,21 @@
 #define SSNIPE 6
 
 / {
-    combos {
-        compatible = "zmk,combos";
+    runtime_combo_defaults {
+        compatible = "cormoran,runtime-combo-defaults";
 
-        COMBO_LANG1 {
+        combo_lang1 {
+            slot = <0>;
             bindings = <&kp LANGUAGE_1>;
             key-positions = <1 2>;
+            display-name = "Language 1";
         };
 
-        COMBO_LANG2 {
+        combo_lang2 {
+            slot = <1>;
             bindings = <&kp LANG2>;
             key-positions = <2 3>;
+            display-name = "Language 2";
         };
     };
 

@@ -31,7 +31,7 @@ This repository is therefore both:
 - **Left-side OLED** via `Polaris_L_Base.overlay` and `nice_oled` in the left build targets.
 - **LED aliases and GPIO LEDs** defined in `Polaris.dtsi`.
 - **Seven ZMK layers** defined in `config/Polaris.keymap`: `DEF`, `FUNC`, `NUM`, `SNIPE`, `BT`, `SCROLL`, and `SSNIPE`.
-- **Combos** for language switching: `COMBO_LANG1` and `COMBO_LANG2`.
+- **Runtime-editable combos** in DYA Studio, with two language-switching defaults.
 - **Runtime sensor rotate behaviors** for scrolling and volume-style sensor bindings.
 - **layout-shift key press behavior** via `layout_shift.dtsi` and `zmk,behavior-layout-shift-key-press`.
 - **Generated visual previews**:
@@ -94,14 +94,26 @@ Layer constants are defined as:
 
 ### Combos
 
-Two combos are currently defined:
+Two runtime combo defaults are currently defined:
 
-| Combo | Binding | Key positions |
-| --- | --- | --- |
-| `COMBO_LANG1` | `&kp LANGUAGE_1` | `<1 2>` |
-| `COMBO_LANG2` | `&kp LANG2` | `<2 3>` |
+| Slot | Display name | Binding | Key positions |
+| ---: | --- | --- | --- |
+| `0` | `Language 1` | `&kp LANGUAGE_1` | `<1 2>` |
+| `1` | `Language 2` | `&kp LANG2` | `<2 3>` |
 
-The physical-layout SVG preview draws these combos as overlays connecting their `key-positions`, so the keymap is visible as geometry, not just text.
+They are compile-time defaults, so they work immediately after flashing. DYA Studio can override them, disable them, or restore them with **Reset to Default**. The firmware exposes eight runtime combo slots in total.
+
+### Editing Combos in DYA Studio
+
+1. Build and flash the left-hand (central) firmware matching the installed module. For the joystick plus encoder module, use `Polaris_L_MODULE_JOY.uf2`.
+2. Connect the left half directly to the computer by USB.
+3. Open [DYA Studio](https://studio.dya.cormoran.works/) in a WebSerial-capable browser and connect to GeaconPolaris.
+4. Open the `Runtime Combo` custom subsystem, choose a slot, then edit its name, behavior, positions, layers, and timing.
+5. Enable the persist option when saving if the change should survive a reboot.
+
+Runtime combos execute on the left central half, so the feature is intentionally not enabled in `Polaris_R_Base.conf`.
+
+The runtime-combo and custom-settings modules are pinned to compatible revisions in `config/west.yml`. Do not change either one to `main` while this repository remains on its current Zephyr 3.5-based ZMK revision; current module `main` requires newer Zephyr 4 Kconfig and linker features.
 
 ### Behaviors and Sensors
 
