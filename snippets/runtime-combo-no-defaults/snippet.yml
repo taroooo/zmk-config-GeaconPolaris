@@ -1,0 +1,3 @@
+name: runtime-combo-no-defaults
+append:
+  EXTRA_DTC_OVERLAY_FILE: runtime-combo-no-defaults.overlay

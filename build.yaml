@@ -16,6 +16,25 @@ include:
     snippet: JOY battery-voltage-divider-oversampling zmk-usb-logging studio-rpc-usb-uart
     artifact-name: Polaris_L_MODULE_JOY
 
+  # Diagnostic builds for the right-half connection freeze. These are kept on
+  # the diagnostic branch only and are not intended for normal releases.
+  - board: seeeduino_xiao_ble
+    shield: Polaris_L_Base rgbled_adapter nice_oled
+    snippet: JOY battery-voltage-divider-oversampling zmk-usb-logging studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_RUNTIME_COMBO=n
+    artifact-name: Polaris_L_MODULE_JOY_DIAG_NO_RUNTIME_COMBO
+
+  - board: seeeduino_xiao_ble
+    shield: Polaris_L_Base rgbled_adapter nice_oled
+    snippet: JOY battery-voltage-divider-oversampling zmk-usb-logging studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_RUNTIME_COMBO_STUDIO_RPC=n
+    artifact-name: Polaris_L_MODULE_JOY_DIAG_NO_COMBO_RPC
+
+  - board: seeeduino_xiao_ble
+    shield: Polaris_L_Base rgbled_adapter nice_oled
+    snippet: JOY battery-voltage-divider-oversampling zmk-usb-logging studio-rpc-usb-uart runtime-combo-no-defaults
+    artifact-name: Polaris_L_MODULE_JOY_DIAG_NO_COMBO_DEFAULTS
+
   - board: seeeduino_xiao_ble
     shield: Polaris_L_Base rgbled_adapter nice_oled
     snippet: ENC zmk-usb-logging studio-rpc-usb-uart
