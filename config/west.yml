@@ -38,7 +38,10 @@ manifest:
     # custom-settings revisions require Zephyr 4 Kconfig/linker features.
     - name: zmk-feature-custom-settings
       remote: cormoran
-      revision: 5be86dcfb903ecc12624b02cadb40bbdbc78abe3
+      # This is the custom-settings main revision that runtime-combo b067f7c
+      # was developed and merged against. Later pre-Zephyr-4 revisions build,
+      # but contain incompatible internal storage redesigns.
+      revision: a772d6e07e118aba7af30696c9575fb1817d3278
       path: modules/zmk-feature-custom-settings
     - name: zmk-feature-runtime-combo
       remote: cormoran
