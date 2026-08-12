@@ -1,0 +1,13 @@
+{
+  "repository": "taroooo/zmk-config-GeaconPolaris",
+  "branch": "agent/fix-split-gatt-runtime-combo",
+  "target": "all",
+  "status": "passing",
+  "raw_status": "success",
+  "color": "#2ea44f",
+  "sha": "40b850310940755afac5c706e69dde269743cd2e",
+  "run_id": "31592122892",
+  "run_number": "6",
+  "run_url": "https://github.com/taroooo/zmk-config-GeaconPolaris/actions/runs/31592122892",
+  "generated_at": "2026-08-12T11:38:35Z"
+}
