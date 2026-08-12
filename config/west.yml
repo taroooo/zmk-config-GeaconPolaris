@@ -34,6 +34,17 @@ manifest:
       path: modules/zmk-input-processor-keybind
 
 # DYA Studio Runtime Processors
+    # Keep these paired revisions while this config uses Zephyr 3.5. Newer
+    # custom-settings revisions require Zephyr 4 Kconfig/linker features.
+    - name: zmk-feature-custom-settings
+      remote: cormoran
+      revision: 5be86dcfb903ecc12624b02cadb40bbdbc78abe3
+      path: modules/zmk-feature-custom-settings
+    - name: zmk-feature-runtime-combo
+      remote: cormoran
+      revision: b067f7c2c3aea609fd2d6a9fb00ffe73e2586893
+      import: true
+      path: modules/zmk-feature-runtime-combo
     - name: zmk-module-runtime-input-processor
       revision: zmk-v0.3.0.0
       url: https://github.com/cormoran/zmk-module-runtime-input-processor
